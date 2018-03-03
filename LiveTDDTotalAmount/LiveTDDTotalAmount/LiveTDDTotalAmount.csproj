@@ -59,6 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounting.cs" />
+    <Compile Include="Budget.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="TotalAmountTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
