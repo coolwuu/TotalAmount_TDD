@@ -18,7 +18,6 @@ namespace LiveTDDTotalAmount
             _accounting = new Accounting(_repository);
         }
 
-        [Ignore]
         [TestMethod]
         public void daily_amount()
         {
@@ -26,7 +25,7 @@ namespace LiveTDDTotalAmount
             TotalAmountShouldBe(20, new DateTime(2018, 4, 1), new DateTime(2018, 4, 2));
         }
 
-        [Ignore]
+
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void invalid_period()
@@ -35,7 +34,6 @@ namespace LiveTDDTotalAmount
             TotalAmountShouldBe(1, new DateTime(2018, 6, 30), new DateTime(2018, 5, 1));
         }
 
-        [Ignore]
         [TestMethod]
         public void multiple_budgets()
         {

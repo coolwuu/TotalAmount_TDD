@@ -16,12 +16,8 @@ namespace LiveTDDTotalAmount
         {
             var budgets = _repo.GetAll();
             var period = new Period(startDate, endDate);
-
-            if (budgets.Any())
-            {
-                return period.EffectiveDays(budgets[0]);
-            }
-            return 0;
+            return budgets.Sum(b => b.TotalAmount(period));
+            
         }
     }
 }
