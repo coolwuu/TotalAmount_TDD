@@ -4,7 +4,7 @@ namespace LiveTDDTotalAmount
 {
     public interface IRepository<T>
     {
-        List<Budget> GetBudgets();
+        List<T> GetAll();
 
     }
 }

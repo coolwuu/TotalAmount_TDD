@@ -14,11 +14,12 @@ namespace LiveTDDTotalAmount
 
         public decimal TotalAmount(DateTime startDate, DateTime endDate)
         {
-            var budgets = _repo.GetBudgets();
+            var budgets = _repo.GetAll();
+            var period = new Period(startDate, endDate);
 
             if (budgets.Any())
             {
-                return 1;
+                return period.EffectiveDays(budgets[0]);
             }
             return 0;
         }

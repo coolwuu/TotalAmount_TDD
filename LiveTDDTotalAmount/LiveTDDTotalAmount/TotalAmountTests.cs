@@ -46,7 +46,6 @@ namespace LiveTDDTotalAmount
             TotalAmountShouldBe(103, new DateTime(2018, 4, 21), new DateTime(2018, 6, 3));
         }
 
-        [Ignore]
         [TestMethod]
         public void no_effective_day_period_after_budget_month()
         {
@@ -54,7 +53,6 @@ namespace LiveTDDTotalAmount
             TotalAmountShouldBe(0, new DateTime(2018, 5, 1), new DateTime(2018, 5, 1));
         }
 
-        [Ignore]
         [TestMethod]
         public void no_effective_day_period_before_budget_month()
         {
@@ -76,7 +74,6 @@ namespace LiveTDDTotalAmount
             TotalAmountShouldBe(1, new DateTime(2018, 4, 1), new DateTime(2018, 4, 1));
         }
 
-        [Ignore]
         [TestMethod]
         public void one_effective_day_period_overlap_budget_month_FirstDay()
         {
@@ -84,7 +81,6 @@ namespace LiveTDDTotalAmount
             TotalAmountShouldBe(1, new DateTime(2018, 3, 31), new DateTime(2018, 4, 1));
         }
 
-        [Ignore]
         [TestMethod]
         public void one_effective_day_period_overlap_budget_month_LastDay()
         {
@@ -94,7 +90,7 @@ namespace LiveTDDTotalAmount
 
         private void GivenBudgets(params Budget[] budgets)
         {
-            _repository.GetBudgets().Returns(budgets.ToList());
+            _repository.GetAll().Returns(budgets.ToList());
         }
 
         private void TotalAmountShouldBe(int expected, DateTime startDate, DateTime endDate)
