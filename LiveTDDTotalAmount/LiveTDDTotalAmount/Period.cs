@@ -14,7 +14,7 @@ namespace LiveTDDTotalAmount
                 throw new ArgumentException();
             }
             this.StartDate = startDate;
-            this.EndDate = endDate;
+            EndDate = endDate;
         }
 
         public int EffectiveDays(Period period)
